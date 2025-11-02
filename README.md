@@ -32,7 +32,7 @@ p = [3, 2, 1]
 sortie:
 Ordre d’exécution : T1 → T3 → T2
 C̄ = 4.33
-
+```
 ## 📊 Analyse de complexité
 
 | Étape | Complexité |
