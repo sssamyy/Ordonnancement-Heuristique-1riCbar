@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scheduling Heuristic</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/static/css/styles.css" />
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-md-10">
+          <div class="card shadow-sm">
+            <div class="card-header">
+              <h3 class="card-title">Scheduling Heuristic</h3>
+            </div>
+            <div class="card-body">
+              <form id="scheduleForm" class="needs-validation" novalidate>
+                <div class="mb-3">
+                  <label for="num_tasks" class="form-label"
+                    >Number of Tasks</label
+                  >
+                  <input
+                    type="number"
+                    id="num_tasks"
+                    name="num_tasks"
+                    class="form-control"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please provide a valid number.
+                  </div>
+                </div>
+                <table
+                  class="table table-bordered mt-4"
+                  id="taskTable"
+                  style="display: none"
+                >
+                  <thead class="table-secondary">
+                    <tr>
+                      <th>Task</th>
+                      <th>Release Time</th>
+                      <th>Processing Time</th>
+                    </tr>
+                  </thead>
+                  <tbody></tbody>
+                </table>
+                <div class="d-flex justify-content-between mt-3">
+                  <button
+                    type="button"
+                    id="generateTable"
+                    class="btn btn-secondary"
+                  >
+                    Generate Task Table
+                  </button>
+                  <button
+                    type="button"
+                    id="resetTable"
+                    class="btn btn-warning"
+                    style="display: none"
+                  >
+                    Reset Table
+                  </button>
+                </div>
+                <div class="d-grid mt-3">
+                  <button type="submit" class="btn btn-primary">
+                    Calculate Schedule
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="mt-4" id="result"></div>
+        </div>
+      </div>
+      <div id="result-container" class="mt-4" style="max-height: 400px; overflow-y: auto; border: 1px solid #ddd; padding: 15px; border-radius: 8px; background-color: #fff;">
+        <div id="result"></div>
+        <div class="text-center mt-4">
+            <img id="ganttChart" src="" style="display:none; max-width: 100%;" alt="Gantt Chart">
+        </div>
+    </div>
+    
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>
